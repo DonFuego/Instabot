@@ -1,0 +1,25 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "5ffb15b8605704b41f36c8d933027206460b9b644591f652a905d3765ee7d211"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.7"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "instapy": {
+            "git": "ssh://git@github.com/DonFuego/InstaPy.git",
+            "ref": "cac8f713937647b89a02894d1e4121d38de2085c"
+        }
+    },
+    "develop": {}
+}
