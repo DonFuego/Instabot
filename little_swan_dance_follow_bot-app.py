@@ -1,6 +1,6 @@
 from instapy import InstaPy
 
-session = InstaPy(username="littleswandancecurriculum", password='L1ttle5wan', headless_browser=True).login()
+session = InstaPy(username="littleswandancecurriculum", password='', headless_browser=True).login()
 session.set_quota_supervisor(enabled=True, sleep_after=["likes", "comments_d", "follows", "unfollows", "server_calls_h"], sleepyhead=True, stochastic_flow=True, notify_me=False,
                               peak_likes_hourly=20,
                               peak_likes_daily=100,
