@@ -1,0 +1,3 @@
+1. Updated xpath element for like button (Under invalid like element in github issues)
+2. Updated the webdriverdownloader.py @ line 320 to account for changes within /home/todd/.local/share/virtualenvs/Instabot-jvzHF1RQ/lib/python3.7/site-packages
+New changes: filename = [name for name in filenames if os_name + bitness in name and name[-3:] != 'asc']
