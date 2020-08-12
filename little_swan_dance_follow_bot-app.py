@@ -17,7 +17,7 @@ session.set_quota_supervisor(enabled=True, sleep_after=["likes", "comments_d", "
                                   peak_server_calls_hourly=None,
                                   peak_server_calls_daily=4000)
 
-session.set_use_clarifai(enabled=True, api_key='47eed3d4901b40caa4497dd4d8f89dde')
+session.set_use_clarifai(enabled=True, api_key=getenv('CLARIFAI_API_KEY'))
 session.set_do_like(enabled=False)
 session.set_do_comment(enabled=False)
 session.set_dont_like(["naked", "nsfw"])
