@@ -4,6 +4,8 @@ load_dotenv()
 from instapy import InstaPy
 from os import getenv
 
+set_workspace(path=getenv('LITTLE_SWAN_DANCE_WORKSPACE'))
+
 session = InstaPy(username=getenv('LITTLE_SWAN_DANCE_USERNAME'), password=getenv('LITTLE_SWAN_DANCE_PASSWORD'), headless_browser=True).login()
 session.set_quota_supervisor(enabled=True, sleep_after=["likes", "comments_d", "follows", "unfollows", "server_calls_h"], sleepyhead=True, stochastic_flow=True, notify_me=False,
                               peak_likes_hourly=20,
