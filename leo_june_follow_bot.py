@@ -37,7 +37,7 @@ def job():
         session.set_do_comment(enabled=False)
         session.set_dont_like(["naked", "nsfw"])
         session.set_do_follow(True, percentage=70, times=1)
-        session.follow_by_tags(['dancestudioownerlife', 'dancestudioowner', 'danceteacher'], amount=30)
+        session.follow_by_tags(['toddlerlife', 'toddlerstyle', 'boymom', 'momlife', 'babyboy', 'littlefashionista', 'totsytle', 'instakidstyle', 'childrenfashion', 'stylishkids', 'instakids', 'toddlerfashion', 'kidslookbook'], amount=30)
         session.follow_user_followers(
             ['Alexandnovakids', 'PatPat_clothing', 'shoplittlemango', 'Harlowandoakley_',
              'gracefulwillows', 'summer_n_may', 'shopbombon', 'dolcebellakids', 'mangokids', 'aliceandames', 'tatumandreesebaby'],
