@@ -33,7 +33,7 @@ def job():
     session.set_use_clarifai(enabled=False, api_key=getenv('CLARIFAI_API_KEY'))
 
     with smart_run(session):
-        session.set_do_like(enabled=False)
+        session.set_do_like(enabled=True)
         session.set_do_comment(enabled=False)
         session.set_dont_like(["naked", "nsfw"])
         session.set_do_follow(True, percentage=70, times=1)
