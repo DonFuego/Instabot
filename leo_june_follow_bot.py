@@ -30,29 +30,30 @@ def job():
                                  peak_server_calls_hourly=None,
                                  peak_server_calls_daily=4000)
 
-    session.set_use_clarifai(enabled=True, api_key=getenv('CLARIFAI_API_KEY'))
+    session.set_use_clarifai(enabled=True)
 
     with smart_run(session):
         session.set_do_like(enabled=False)
         session.set_do_comment(enabled=False)
         session.set_dont_like(["naked", "nsfw"])
         session.set_do_follow(True, percentage=70, times=1)
-        session.follow_by_tags(['toddlerlife', 'toddlerstyle', 'boymom', 'momlife', 'babyboy', 'littlefashionista', 'totsytle', 'instakidstyle', 'childrenfashion', 'stylishkids', 'instakids', 'toddlerfashion', 'kidslookbook'], amount=30)
+        # session.follow_by_tags(['toddlerlife', 'toddlerstyle', 'boymom', 'momlife', 'babyboy', 'littlefashionista', 'totsytle', 'instakidstyle', 'childrenfashion', 'stylishkids', 'instakids', 'toddlerfashion', 'kidslookbook'], amount=30)
+        session.set_user_interact(amount=1, randomize=True, percentage=100, media='Photo')
         session.follow_user_followers(
             ['Alexandnovakids', 'PatPat_clothing', 'shoplittlemango', 'Harlowandoakley_',
              'gracefulwillows', 'summer_n_may', 'shopbombon', 'dolcebellakids', 'mangokids', 'aliceandames', 'tatumandreesebaby'],
-            amount=20, randomize=True, sleep_delay=30, interact=False)
-        session.follow_likers(
-            ['Alexandnovakids', 'PatPat_clothing', 'shoplittlemango', 'Harlowandoakley_',
-             'gracefulwillows', 'summer_n_may', 'shopbombon', 'dolcebellakids', 'mangokids', 'aliceandames',
-             'tatumandreesebaby'],
-            photos_grab_amount=3, follow_likers_per_photo=5, randomize=True, sleep_delay=30, interact=False)
-        session.follow_commenters(
-            ['Alexandnovakids', 'PatPat_clothing', 'shoplittlemango', 'Harlowandoakley_',
-             'gracefulwillows', 'summer_n_may', 'shopbombon', 'dolcebellakids', 'mangokids', 'aliceandames',
-             'tatumandreesebaby'],
-            amount=3, daysold=180, max_pic=20, sleep_delay=30, interact=False)
-        session.unfollow_users(amount=50, nonFollowers=True, style='RANDOM', unfollow_after=172800, sleep_delay=30)
+            amount=5, randomize=True, sleep_delay=30, interact=True)
+        # session.follow_likers(
+        #     ['Alexandnovakids', 'PatPat_clothing', 'shoplittlemango', 'Harlowandoakley_',
+        #      'gracefulwillows', 'summer_n_may', 'shopbombon', 'dolcebellakids', 'mangokids', 'aliceandames',
+        #      'tatumandreesebaby'],
+        #     photos_grab_amount=1, follow_likers_per_photo=2, randomize=True, sleep_delay=30, interact=True)
+        # session.follow_commenters(
+        #     ['Alexandnovakids', 'PatPat_clothing', 'shoplittlemango', 'Harlowandoakley_',
+        #      'gracefulwillows', 'summer_n_may', 'shopbombon', 'dolcebellakids', 'mangokids', 'aliceandames',
+        #      'tatumandreesebaby'],
+        #     amount=3, daysold=180, max_pic=5, sleep_delay=30, interact=True)
+        session.unfollow_users(amount=100, nonFollowers=True, style='RANDOM', unfollow_after=172800, sleep_delay=30)
 
         # session.end()
 
