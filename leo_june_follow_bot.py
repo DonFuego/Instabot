@@ -35,7 +35,7 @@ def job():
     with smart_run(session):
         session.set_do_like(enabled=False)
         session.set_do_comment(enabled=False)
-        session.set_dont_like(["naked", "nsfw"])
+        session.set_dont_like(["naked", "nsfw", "explicit"])
         session.set_do_follow(True, percentage=70, times=1)
         # session.follow_by_tags(['toddlerlife', 'toddlerstyle', 'boymom', 'momlife', 'babyboy', 'littlefashionista', 'totsytle', 'instakidstyle', 'childrenfashion', 'stylishkids', 'instakids', 'toddlerfashion', 'kidslookbook'], amount=30)
         session.set_user_interact(amount=1, randomize=True, percentage=100, media='Photo')
