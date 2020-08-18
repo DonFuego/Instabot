@@ -30,7 +30,7 @@ def job():
                                  peak_server_calls_hourly=None,
                                  peak_server_calls_daily=4000)
 
-    session.set_use_clarifai(enabled=True)
+    session.set_use_clarifai(enabled=False, api_key=getenv('CLARIFAI_API_KEY'))
 
     with smart_run(session):
         session.set_do_like(enabled=False)
