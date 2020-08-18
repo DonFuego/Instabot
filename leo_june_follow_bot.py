@@ -15,7 +15,7 @@ set_workspace(path=getenv('LEO_JUNE_WORKSPACE'))
 
 def job():
     session = InstaPy(username=getenv('LEO_JUNE_USERNAME'), password=getenv('LEO_JUNE_PASSWORD'),
-                      headless_browser=True).login()
+                      headless_browser=False).login()
     session.set_quota_supervisor(enabled=True,
                                  sleep_after=["likes", "comments_d", "follows", "unfollows", "server_calls_h"],
                                  sleepyhead=True, stochastic_flow=True, notify_me=False,
@@ -33,7 +33,7 @@ def job():
     session.set_use_clarifai(enabled=False, api_key=getenv('CLARIFAI_API_KEY'))
 
     with smart_run(session):
-        session.set_do_like(enabled=False)
+        session.set_do_like(enabled=True)
         session.set_do_comment(enabled=False)
         session.set_dont_like(["naked", "nsfw", "explicit"])
         session.set_do_follow(True, percentage=70, times=1)
@@ -58,7 +58,7 @@ def job():
         # session.end()
 
 
-schedule.every().day.at("17:30").do(job)
+schedule.every().day.at("21:29").do(job)
 
 while True:
     schedule.run_pending()
